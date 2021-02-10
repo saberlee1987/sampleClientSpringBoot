@@ -1,0 +1,27 @@
+server:
+  port: 9500
+
+
+service:
+  api:
+    basePath: /services/client/student
+    swaggerPath: /v2/api-docs
+  keycloak:
+    authUrl: http://localhost:7080/auth/
+    realm: realmTest
+    clientId: clientTest
+    clientSecret: f1087111-2c88-4359-b2e9-3696ee6c21b2
+    username: user1
+    password: 123456
+  student:
+    baseUrl: http://localhost
+    port: 8760
+    basePath: /services/student
+    addStudent: /add
+    findAll: /findAll
+
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: ${service.api.basePath}${service.api.swaggerPath}
